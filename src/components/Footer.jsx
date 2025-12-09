@@ -27,4 +27,41 @@ const Footer = () => {
               Simplifying Finances for Every Indian. We provide expert assistance in Loans, Taxes, GST, Insurance, and Investments with a transparent and hassle-free process.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-teal-500
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-teal-500 hover:text-white transition-all"><Facebook className="w-5 h-5"/></a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-teal-500 hover:text-white transition-all"><Twitter className="w-5 h-5"/></a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-teal-500 hover:text-white transition-all"><Instagram className="w-5 h-5"/></a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-teal-500 hover:text-white transition-all"><Linkedin className="w-5 h-5"/></a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-white font-bold uppercase tracking-wider mb-6">Company</h3>
+            <ul className="space-y-3">
+              <li><Link to="/" className="hover:text-teal-400 transition-colors">Home</Link></li>
+              <li><Link to="/services" className="hover:text-teal-400 transition-colors">Services</Link></li>
+              <li><Link to="/contact" className="hover:text-teal-400 transition-colors">Contact Us</Link></li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="text-white font-bold uppercase tracking-wider mb-6">Legal</h3>
+            <ul className="space-y-3">
+              <li><Link to="/terms" className="hover:text-teal-400 transition-colors">Terms & Conditions</Link></li>
+              <li><Link to="/privacy" className="hover:text-teal-400 transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/contact" className="hover:text-teal-400 transition-colors">Support</Link></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm">© {new Date().getFullYear()} Financialpandit. All rights reserved.</p>
+          <p className="text-sm flex items-center">Made with <Heart className="w-4 h-4 text-red-500 mx-1 fill-current" /> for India</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

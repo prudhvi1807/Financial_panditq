@@ -84,7 +84,8 @@ Time: ${formData.time}`;
       tags: ["Credit Repair", "Score Improvement", "India/USA/Canada"],
       points: ["Identify issues in your credit report", "Remove inaccurate entries", "Personalized score improvement plan", "Faster approval chances for loans"],
       cta: "Learn More",
-      color: "from-rose-500 to-red-600"
+      color: "from-rose-500 to-red-600",
+      link: "#"
     }
   ];
 
@@ -148,9 +149,15 @@ Time: ${formData.time}`;
               
               {/* Footer CTA */}
               <div className="p-4 bg-black/20 border-t border-white/5">
-                <button onClick={() => document.getElementById('appointment-form')?.scrollIntoView({behavior: 'smooth'})} className="w-full py-3 rounded-xl bg-white/5 hover:bg-teal-600 hover:text-white text-teal-400 font-bold transition-all flex items-center justify-center group-hover:shadow-lg">
-                  {service.cta} <ArrowRight className="ml-2 w-4 h-4" />
-                </button>
+                {service.link ? (
+                  <a href={service.link} className="w-full py-3 rounded-xl bg-white/5 hover:bg-teal-600 hover:text-white text-teal-400 font-bold transition-all flex items-center justify-center group-hover:shadow-lg">
+                     {service.cta} <ArrowRight className="ml-2 w-4 h-4" />
+                  </a>
+                ) : (
+                  <button onClick={() => document.getElementById('appointment-form')?.scrollIntoView({behavior: 'smooth'})} className="w-full py-3 rounded-xl bg-white/5 hover:bg-teal-600 hover:text-white text-teal-400 font-bold transition-all flex items-center justify-center group-hover:shadow-lg">
+                    {service.cta} <ArrowRight className="ml-2 w-4 h-4" />
+                  </button>
+                )}
               </div>
             </motion.div>
           ))}
