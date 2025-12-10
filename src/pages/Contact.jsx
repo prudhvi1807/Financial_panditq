@@ -34,8 +34,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-bold text-lg mb-1">Email Us</h4>
-                  <p className="text-slate-400">support@financialpandit.com</p>
-                  <p className="text-slate-400">info@financialpandit.com</p>
+                  <p className="text-slate-400">Prashanth.financialpandit@gmail.com</p>
+                  <p className="text-slate-400">financialpandit@zohomail.in</p>
                 </div>
               </div>
               
@@ -56,7 +56,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-bold text-lg mb-1">Visit Us</h4>
-                  <p className="text-slate-400">123 Financial District,<br/>Tech City, India 500081</p>
+                  <p className="text-slate-400">2-55 KAPUWADA MAIN ROAD NENNELA MANCHERIAL,<br/>Pin 504219 TELANGANA</p>
                 </div>
               </div>
             </div>
@@ -68,7 +68,15 @@ const Contact = () => {
                </div>
                {/* Simulating map view */}
                <div className="w-full h-full bg-[#1e293b] flex items-center justify-center text-slate-600">
-                  [Google Map Embed Area]
+                   <iframe 
+                 title="Kapuwada Location"
+                 src="https://maps.google.com/maps?q=18.867639,79.487944&output=embed"
+                 width="100%" 
+                 height="100%" 
+                 style={{ border: 0 }} 
+                 allowFullScreen 
+                 loading="lazy"
+               ></iframe>
                </div>
             </div>
           </div>
