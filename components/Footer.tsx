@@ -22,7 +22,24 @@ const Footer: React.FC = () => {
                </span>
             </Link>
             <p className="text-slate-400 leading-relaxed mb-6 max-w-sm">
-              Simplifying Finances for Every Indian. We provide expert assistance in Loans, Taxes, GST, Insurance, and Investments with a transparent and hassle-free process.
+                       
+              Connect With Us<br/><br/>
+
+              📞 <b>Contact Us</b><br/>
+              +91-7038790377<br/><br/>
+
+              📍 <b>Visit Us</b><br/>
+               2-55 Kapuwada Main Road,<br/>
+               Nennela, Mancherial,<br/>
+               Pin 504219, Telangana<br/><br/>
+
+               📧 <b>Email Support</b><br/>
+               prashanth.financialpandit@gmail.com<br/><br/>
+
+               🕒 <b>Business Hours</b><br/>
+               Monday – Saturday<br/>
+               10:00 AM – 7:00 PM IST<br/><br/>
+            
             </p>
             <div className="flex space-x-4">
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-teal-500 hover:text-white transition-all"><Facebook className="w-5 h-5"/></a>
