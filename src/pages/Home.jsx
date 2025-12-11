@@ -23,8 +23,8 @@ const Home = () => {
               Simplifying Finances for Every Indian
             </div>
             <h1 className="text-5xl md:text-7xl font-heading font-black text-white leading-[1.1] mb-6">
-              Your One-Stop <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">Financial Partner!</span>
+               Your one-stop<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500"> Solution for all your financial needs</span>
             </h1>
             <p className="text-lg text-slate-400 mb-8 max-w-lg leading-relaxed">
               We handle your Loans, Income Tax, GST, Insurance, Investments, and CIBIL Repair Services across India, USA, and Canada — so you can focus on growing your wealth. 100% compliant, transparent, and fast.
