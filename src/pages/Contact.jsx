@@ -68,14 +68,25 @@ const Contact = () => {
                </div>
                {/* Simulating map view */}
                <div className="w-full h-full bg-[#1e293b] flex items-center justify-center text-slate-600">
+                     {/* Clickable Map */}
+  <a 
+    href="https://maps.google.com/?q=18.867639,79.487944"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="absolute inset-0 z-10"
+    aria-label="Open Google Maps for Kapuwada Location"
+  ></a>
                    <iframe 
-                 title="Kapuwada Location"
-                 src="https://maps.google.com/maps?q=18.867639,79.487944&output=embed"
-                 width="100%" 
-                 height="100%" 
-                 style={{ border: 0 }} 
-                 allowFullScreen 
-                 loading="lazy"
+                   
+                  
+                  title="Kapuwada Location"
+                  src="https://maps.google.com/maps?q=18.867639,79.487944&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, pointerEvents: "none" }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
                ></iframe>
                </div>
             </div>
