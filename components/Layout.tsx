@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation, Outlet } from 'react-router-dom';
 import { useStore } from '../context/Store';
 import { Menu, X, User as UserIcon, LogOut } from 'lucide-react';
 import ChatBot from './ChatBot';
@@ -7,7 +7,7 @@ import ChatBot from './ChatBot';
 // Placeholder for the Logo. Replace this URL with your actual image path
 const LOGO_URL = "https://res.cloudinary.com/dwye1ye9z/image/upload/v1765004598/Screenshot_2025-12-06_123250_gt8zzp.png";
 
-const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const Layout: React.FC = () => {
   const { user, logout } = useStore();
   const navigate = useNavigate();
   const location = useLocation();
@@ -109,7 +109,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
       {/* Main Content */}
       <main className="flex-grow pt-20">
-        {children}
+        <Outlet />
       </main>
 
       {/* Footer */}

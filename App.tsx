@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Layout from './components/Layout';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
+import CibilConsultation from './pages/CibilConsultation';
+import NotFound from './pages/NotFound';
 
 // ScrollToTop Component to fix SPA navigation scroll issues
 const ScrollToTop = () => {
@@ -18,32 +18,24 @@ const ScrollToTop = () => {
   return null;
 };
 
-const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-slate-950 via-[#0a0f26] to-slate-950 text-slate-100 font-sans selection:bg-teal-500 selection:text-white">
-      <Navbar />
-      <main className="flex-grow pt-20">
-        {children}
-      </main>
-      <Footer />
-      <WhatsAppButton />
-    </div>
-  );
-};
+// Layout is provided by components/Layout which renders the site chrome and <Outlet />
 
 const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <Layout>
-        <Routes>
+      <Routes>
+        <Route element={<Layout />}>              {/* nested route wrapper */}
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/cibil-consultation" element={<CibilConsultation />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
-        </Routes>
-      </Layout>
+        </Route>
+        {/* fallback for unmatched routes */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </Router>
   );
 };

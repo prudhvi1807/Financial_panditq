@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Banknote, FileText, TrendingUp, Shield, BarChart3, CheckCircle, Calendar, MessageCircle, ArrowRight } from 'lucide-react';
+import { Banknote, FileText, TrendingUp, Shield, BarChart3, CheckCircle, Calendar, MessageCircle, ArrowRight, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Services: React.FC = () => {
@@ -76,6 +76,21 @@ Time: ${formData.time}`;
       points: ["Upload docs", "Expert assigned", "Stay compliant", "Timely reminders"],
       cta: "Manage My GST",
       color: "from-cyan-500 to-teal-600"
+    },
+    {
+      id: "cibil",
+      title: "CIBIL Repair Services",
+      icon: Globe,
+      tags: ["Credit Repair", "Score Improvement", "India/USA/Canada"],
+      points: [
+        "Identify issues in your credit report",
+        "Remove inaccurate entries",
+        "Personalized score improvement plan",
+        "Faster approval chances for loans"
+      ],
+      cta: "Learn More",
+      color: "from-rose-500 to-red-600",
+      link: "/cibil-consultation"
     }
   ];
 
@@ -139,9 +154,18 @@ Time: ${formData.time}`;
               
               {/* Footer CTA */}
               <div className="p-4 bg-black/20 border-t border-white/5">
-                <button onClick={() => document.getElementById('appointment-form')?.scrollIntoView({behavior: 'smooth'})} className="w-full py-3 rounded-xl bg-white/5 hover:bg-teal-600 hover:text-white text-teal-400 font-bold transition-all flex items-center justify-center group-hover:shadow-lg">
-                  {service.cta} <ArrowRight className="ml-2 w-4 h-4" />
-                </button>
+                {service.link ? (
+                  <Link
+                    to={service.link}
+                    className="w-full py-3 rounded-xl bg-white/5 hover:bg-teal-600 hover:text-white text-teal-400 font-bold transition-all flex items-center justify-center group-hover:shadow-lg"
+                  >
+                    {service.cta} <ArrowRight className="ml-2 w-4 h-4" />
+                  </Link>
+                ) : (
+                  <button onClick={() => document.getElementById('appointment-form')?.scrollIntoView({behavior: 'smooth'})} className="w-full py-3 rounded-xl bg-white/5 hover:bg-teal-600 hover:text-white text-teal-400 font-bold transition-all flex items-center justify-center group-hover:shadow-lg">
+                    {service.cta} <ArrowRight className="ml-2 w-4 h-4" />
+                  </button>
+                )}
               </div>
             </motion.div>
           ))}

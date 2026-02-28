@@ -11,7 +11,7 @@ const Services = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     const message = `New Appointment Request:
 Name: ${formData.name}
 Email: ${formData.email}
@@ -20,14 +20,14 @@ Date: ${formData.date}
 Time: ${formData.time}`;
 
     const whatsappURL = "https://wa.me/917038790377?text=" + encodeURIComponent(message);
-    
+
     setStatus('redirecting');
     window.open(whatsappURL, "_blank");
 
     // Reset form after a delay
     setTimeout(() => {
-        setStatus('idle');
-        setFormData({ name: '', email: '', phone: '', date: '', time: '' });
+      setStatus('idle');
+      setFormData({ name: '', email: '', phone: '', date: '', time: '' });
     }, 3000);
   };
 
@@ -85,7 +85,7 @@ Time: ${formData.time}`;
       points: ["Identify issues in your credit report", "Remove inaccurate entries", "Personalized score improvement plan", "Faster approval chances for loans"],
       cta: "Learn More",
       color: "from-rose-500 to-red-600",
-      link: "#"
+      link: "/cibil-consultation"
     }
   ];
 
@@ -93,13 +93,13 @@ Time: ${formData.time}`;
     <div className="bg-[#0a0f26]">
       {/* Header */}
       <section className="pt-12 pb-20 text-center px-4">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="max-w-3xl mx-auto"
         >
           <h1 className="text-4xl md:text-6xl font-heading font-black text-white mb-6">
-            Financialpandit<br/>
+            Financialpandit<br />
             <span className="text-teal-400 text-2xl md:text-4xl block mt-2">Your One-Stop Financial Partner!</span>
           </h1>
           <p className="text-slate-400 text-lg bg-white/5 inline-block px-6 py-3 rounded-full border border-white/10">
@@ -146,15 +146,15 @@ Time: ${formData.time}`;
                   ))}
                 </ul>
               </div>
-              
+
               {/* Footer CTA */}
               <div className="p-4 bg-black/20 border-t border-white/5">
                 {service.link ? (
-                  <a href={service.link} className="w-full py-3 rounded-xl bg-white/5 hover:bg-teal-600 hover:text-white text-teal-400 font-bold transition-all flex items-center justify-center group-hover:shadow-lg">
-                     {service.cta} <ArrowRight className="ml-2 w-4 h-4" />
-                  </a>
+                  <Link to={service.link} className="w-full py-3 rounded-xl bg-white/5 hover:bg-teal-600 hover:text-white text-teal-400 font-bold transition-all flex items-center justify-center group-hover:shadow-lg">
+                    {service.cta} <ArrowRight className="ml-2 w-4 h-4" />
+                  </Link>
                 ) : (
-                  <button onClick={() => document.getElementById('appointment-form')?.scrollIntoView({behavior: 'smooth'})} className="w-full py-3 rounded-xl bg-white/5 hover:bg-teal-600 hover:text-white text-teal-400 font-bold transition-all flex items-center justify-center group-hover:shadow-lg">
+                  <button onClick={() => document.getElementById('appointment-form')?.scrollIntoView({ behavior: 'smooth' })} className="w-full py-3 rounded-xl bg-white/5 hover:bg-teal-600 hover:text-white text-teal-400 font-bold transition-all flex items-center justify-center group-hover:shadow-lg">
                     {service.cta} <ArrowRight className="ml-2 w-4 h-4" />
                   </button>
                 )}
@@ -167,39 +167,39 @@ Time: ${formData.time}`;
       {/* Appointment Form Section */}
       <section id="appointment-form" className="py-24 bg-slate-950 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-900 to-transparent"></div>
-        
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="bg-[#0f172a] border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl">
             <div className="text-center mb-10">
-               <div className="w-16 h-16 bg-teal-500/10 rounded-full flex items-center justify-center mx-auto mb-4 text-teal-400">
-                 <Calendar className="w-8 h-8" />
-               </div>
-               <h2 className="text-3xl font-heading font-bold text-white mb-2">Book an Appointment</h2>
-               <p className="text-slate-400">Schedule a free consultation with our financial experts.</p>
+              <div className="w-16 h-16 bg-teal-500/10 rounded-full flex items-center justify-center mx-auto mb-4 text-teal-400">
+                <Calendar className="w-8 h-8" />
+              </div>
+              <h2 className="text-3xl font-heading font-bold text-white mb-2">Book an Appointment</h2>
+              <p className="text-slate-400">Schedule a free consultation with our financial experts.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-bold text-slate-400 mb-2">Full Name <span className="text-red-500">*</span></label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     required
                     className="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-teal-500 outline-none transition-colors"
                     placeholder="John Doe"
                     value={formData.name}
-                    onChange={e => setFormData({...formData, name: e.target.value})}
+                    onChange={e => setFormData({ ...formData, name: e.target.value })}
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-slate-400 mb-2">Email Address <span className="text-red-500">*</span></label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     required
                     className="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-teal-500 outline-none transition-colors"
                     placeholder="john@example.com"
                     value={formData.email}
-                    onChange={e => setFormData({...formData, email: e.target.value})}
+                    onChange={e => setFormData({ ...formData, email: e.target.value })}
                   />
                 </div>
               </div>
@@ -207,55 +207,55 @@ Time: ${formData.time}`;
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-bold text-slate-400 mb-2">Phone Number</label>
-                  <input 
-                    type="tel" 
+                  <input
+                    type="tel"
                     className="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-teal-500 outline-none transition-colors"
                     placeholder="+91 98765 43210"
                     value={formData.phone}
-                    onChange={e => setFormData({...formData, phone: e.target.value})}
+                    onChange={e => setFormData({ ...formData, phone: e.target.value })}
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-bold text-slate-400 mb-2">Date <span className="text-red-500">*</span></label>
-                    <input 
-                       type="date"
-                       required
-                       className="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-teal-500 outline-none transition-colors text-sm"
-                       value={formData.date}
-                       onChange={e => setFormData({...formData, date: e.target.value})}
+                    <input
+                      type="date"
+                      required
+                      className="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-teal-500 outline-none transition-colors text-sm"
+                      value={formData.date}
+                      onChange={e => setFormData({ ...formData, date: e.target.value })}
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-slate-400 mb-2">Time <span className="text-red-500">*</span></label>
-                    <input 
-                       type="time"
-                       required
-                       className="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-teal-500 outline-none transition-colors text-sm"
-                       value={formData.time}
-                       onChange={e => setFormData({...formData, time: e.target.value})}
+                    <input
+                      type="time"
+                      required
+                      className="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-teal-500 outline-none transition-colors text-sm"
+                      value={formData.time}
+                      onChange={e => setFormData({ ...formData, time: e.target.value })}
                     />
                   </div>
                 </div>
               </div>
 
               <button className="w-full py-4 bg-teal-500 hover:bg-teal-400 text-black font-bold rounded-xl transition-all shadow-lg text-lg flex items-center justify-center">
-                 {status === 'redirecting' ? <><MessageCircle className="mr-2"/> Redirecting to WhatsApp...</> : 'Request Appointment'}
+                {status === 'redirecting' ? <><MessageCircle className="mr-2" /> Redirecting to WhatsApp...</> : 'Request Appointment'}
               </button>
             </form>
           </div>
 
           {/* Help Box */}
           <div className="mt-12 text-center">
-             <div className="inline-flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
-                <div className="text-left">
-                   <h4 className="text-white font-bold">Need Immediate Help?</h4>
-                   <p className="text-slate-400 text-sm">Chat with us directly on WhatsApp for quick answers.</p>
-                </div>
-                <a href="https://wa.me/917038790377" target="_blank" className="px-6 py-3 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#20bd5a] transition-colors flex items-center">
-                   <MessageCircle className="w-5 h-5 mr-2" /> Chat
-                </a>
-             </div>
+            <div className="inline-flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
+              <div className="text-left">
+                <h4 className="text-white font-bold">Need Immediate Help?</h4>
+                <p className="text-slate-400 text-sm">Chat with us directly on WhatsApp for quick answers.</p>
+              </div>
+              <a href="https://wa.me/917038790377" target="_blank" className="px-6 py-3 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#20bd5a] transition-colors flex items-center">
+                <MessageCircle className="w-5 h-5 mr-2" /> Chat
+              </a>
+            </div>
           </div>
         </div>
       </section>
