@@ -199,21 +199,59 @@ const CibilConsultation: React.FC = () => {
       <section className="py-20 border-t border-white/5 bg-slate-900/30">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="text-3xl font-heading font-bold mb-12 text-center">Recent Case Results</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div className="bg-gradient-to-br from-[#0f172a] to-slate-900 p-8 rounded-2xl border border-white/10 text-center shadow-lg">
-              <span className="block text-sm text-teal-500 font-bold mb-2 uppercase tracking-wider">Retail / Personal</span>
-              <p className="font-bold text-2xl text-white mb-3">612 <span className="text-slate-500 font-normal mx-2">→</span> 742</p>
-              <p className="text-slate-400 text-sm">After Structured Correction</p>
+              <span className="block text-sm text-teal-500 font-bold mb-3 uppercase tracking-wider">Retail / Personal</span>
+              <p className="font-bold text-3xl text-white mb-2">612 <span className="text-slate-500 font-medium mx-3">→</span> 742</p>
+              <p className="text-slate-400 text-sm font-medium">After Structured Correction</p>
             </div>
             <div className="bg-gradient-to-br from-[#0f172a] to-slate-900 p-8 rounded-2xl border border-white/10 text-center shadow-lg">
-              <span className="block text-sm text-teal-500 font-bold mb-2 uppercase tracking-wider">Business / MSME</span>
-              <p className="font-bold text-2xl text-white mb-3">Rank 8 <span className="text-slate-500 font-normal mx-2">→</span> Rank 4</p>
-              <p className="text-slate-400 text-sm">After 9 Months Discipline</p>
+              <span className="block text-sm text-teal-500 font-bold mb-3 uppercase tracking-wider">Business / MSME</span>
+              <p className="font-bold text-3xl text-white mb-2">Rank 8 <span className="text-slate-500 font-medium mx-3">→</span> Rank 4</p>
+              <p className="text-slate-400 text-sm font-medium">After 9 Months Discipline</p>
             </div>
           </div>
-          <p className="text-sm text-slate-500 mt-8 text-center italic">
-            * Individual outcomes vary based on profile history, specific errors, and ongoing financial discipline.
+          <p className="text-sm text-slate-500 text-center italic">
+            * Individual outcomes vary based on profile history, reporting errors, financial discipline, and lender evaluation policies.
           </p>
+        </div>
+      </section>
+
+      {/* Verified Client Experience */}
+      <section className="py-16 border-t border-white/5">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-2xl font-heading font-bold mb-10 text-center">Verified Client Experience</h2>
+
+          <div className="bg-[#0f172a] border border-white/5 rounded-2xl p-8 md:p-10 shadow-lg mb-8">
+            <div className="mb-6 pb-6 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <p className="font-bold text-2xl text-white">672 <span className="text-slate-500 font-normal mx-2">→</span> 758 <span className="text-teal-400 text-lg ml-2">in 3.5 Months</span></p>
+              </div>
+              <div className="text-sm text-slate-400 font-medium bg-white/5 px-4 py-2 rounded-lg inline-block">
+                After removal of written-off status and structured dispute handling.
+              </div>
+            </div>
+
+            <blockquote className="text-lg text-slate-300 leading-relaxed mb-6 italic">
+              "My CIBIL score improved from 672 to 758 after structured correction and professional guidance. Written-off status was resolved and incorrect accounts were successfully disputed. The process was transparent and systematic."
+            </blockquote>
+            <p className="font-bold text-white">— Deepak Jena</p>
+          </div>
+
+          <p className="text-xs text-slate-500 text-center">
+            * Corrections were made only where reporting discrepancies were identified.
+          </p>
+        </div>
+      </section>
+
+      {/* Trust Micro-Section */}
+      <section className="py-8 bg-slate-900/40 border-t border-white/5">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 text-sm font-medium text-slate-400">
+            <div className="flex items-center tracking-wide"><span className="text-teal-500 mr-2 text-lg leading-none">✔</span> Structured Legal Correction Process</div>
+            <div className="flex items-center tracking-wide"><span className="text-teal-500 mr-2 text-lg leading-none">✔</span> Transparent Communication</div>
+            <div className="flex items-center tracking-wide"><span className="text-teal-500 mr-2 text-lg leading-none">✔</span> No Deletion of Genuine Defaults</div>
+          </div>
         </div>
       </section>
 
